@@ -52,20 +52,17 @@ function emptyTable() {
   ];
 }
 function checkWin() {
-  //diagnal
-
+  //diagonal
   let c1 = table[0].value;
   let c2 = table[4].value;
   let c3 = table[8].value;
   if (c1 == c2 && c2 == c3 && c1 != "-") {
-    console.log("1");
     return true;
   }
   c1 = table[2].value;
   c2 = table[4].value;
   c3 = table[6].value;
   if (c1 == c2 && c2 == c3 && c1 != "-") {
-    console.log("2");
     return true;
   }
   for (let i = 1; i <= 3; i++) {
@@ -74,15 +71,13 @@ function checkWin() {
     c2 = returnValue(`r${i}c2`);
     c3 = returnValue(`r${i}c3`);
     if (c1 == c2 && c2 == c3 && c1 != "-") {
-      console.log("3");
       return true;
     }
-    //culomn win
+    //column win
     c1 = returnValue(`r1c${i}`);
     c2 = returnValue(`r2c${i}`);
     c3 = returnValue(`r3c${i}`);
     if (c1 == c2 && c2 == c3 && c1 != "-") {
-      console.log("4");
       return true;
     }
   }
@@ -95,7 +90,6 @@ function updateCount() {
       count++;
     }
   }
-  console.log(count);
 }
 function updatePlayer() {
   if (count % 2 == 0) {
@@ -104,7 +98,6 @@ function updatePlayer() {
     player = "O";
   }
   document.querySelector("#top").innerHTML = `player is: ${player}`;
-  console.log(player);
 }
 function checkCanPlay() {
   let emptyCounter = 0;
@@ -113,16 +106,12 @@ function checkCanPlay() {
       emptyCounter++;
     }
   }
-
-  if (emptyCounter > 0) {
-    return true;
-  }
-  return false;
+  return emptyCounter > 0;
 }
 function disableCells() {
   for (let i of table) {
     let place = i.place;
-    document.querySelector(`#${place}`).onclick = "";
+    document.querySelector(`#${place}`).onclick = null; // Use null to clear event
   }
 }
 function printBoard() {
@@ -156,7 +145,7 @@ function updateTableValue(place) {
   }
 }
 function colorAllCells() {
-  for (i of table) {
+  for (let i of table) {
     let cell = document.querySelector(`#${i.place}`);
     if (i.value != "-") {
       document.querySelector("#btnReset").style = "display:block";
@@ -175,18 +164,18 @@ function addSymbol(cell) {
     colorAllCells();
     userHistoryJson = JSON.stringify(table);
     localStorage.setItem("TicTacHistory", userHistoryJson);
-    updateCount();
-    updatePlayer();
     if (checkWin()) {
-      // if someone won
       document.querySelector("#prompt").innerText = `the winner is: ${player}!`;
       disableCells();
     } else if (!checkCanPlay()) {
-      //if its a tie
       document.querySelector("#prompt").innerText = `it's a tie!`;
       disableCells();
+    } else {
+      updateCount();
+      updatePlayer(); // Move player update here
     }
   }
 }
+
 //print the board when game starts
 init();
