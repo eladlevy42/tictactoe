@@ -1,5 +1,5 @@
 # Tic Tac Toe
-<img src = "\pictures\winTicTacToe.png"></img>
+<img src = "\pictures\winTicTacToe.png" style = 'width:150px'></img>
 ## Table of Contents
 
 - [Getting Started](#getting-started)
