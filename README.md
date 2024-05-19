@@ -1,7 +1,5 @@
 # Tic Tac Toe
 
-<img src="path/to/your/image.png" alt="Tic Tac Toe Game" width="600">
-
 ## Table of Contents
 
 - [Getting Started](#getting-started)
