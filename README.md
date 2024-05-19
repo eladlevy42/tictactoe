@@ -1,5 +1,5 @@
 # Tic Tac Toe
-<img src = "\pictures\winTicTacToe.png" style = 'width:150px'></img>
+<img src = "\pictures\winTicTacToe.png" style = 'width:250px'></img>
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -39,9 +39,6 @@ To get started with this project, follow these steps:
 2. Players take turns clicking on the cells of the game board.
 3. The game indicates the current player and displays the winner once a player wins.
 4. Click the "Reset" button to start a new game.
-
-<img src="path/to/board-image.png" alt="Game Board" width="400">
-
 ## Code Structure
 
 ### index.html
