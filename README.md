@@ -5,10 +5,7 @@
 - [Getting Started](#getting-started)
 - [Features](#features)
 - [Usage](#usage)
-- [Code Structure](#code-structure)
-- [Screenshots](#screenshots)
-- [License](#license)
-
+  
 ## Getting Started
 
 To get started with this project, follow these steps:
