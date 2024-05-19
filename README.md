@@ -1,5 +1,5 @@
 # Tic Tac Toe
-
+<img src = "\pictures\winTicTacToe.png"></img>
 ## Table of Contents
 
 - [Getting Started](#getting-started)
